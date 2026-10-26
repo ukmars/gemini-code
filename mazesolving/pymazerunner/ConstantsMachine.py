@@ -1,0 +1,45 @@
+# Here we map all of the RP2040 pins to the components on the robot
+
+from machine import Pin, PWM, ADC
+# GPIO mappings
+PWMFrequency = 30000
+#LED's
+SENSOR_LED_LEFT = Pin(20,Pin.OUT)	
+SENSOR_LED_CENTRE = Pin(19,Pin.OUT)	
+SENSOR_LED_RIGHT = Pin(18,Pin.OUT)	
+MEZ_LED_LEFT = Pin(12,Pin.OUT)	
+MEZ_LED_RIGHT = Pin(13,Pin.OUT)	
+
+# Motor Pins
+LEFT_MOTOR_A_ENCODER_PIN = 8
+RIGHT_MOTOR_A_ENCODER_PIN = 6
+
+LEFT_MOTOR_FWD_PWM_PIN = PWM(Pin(3, Pin.OUT))
+LEFT_MOTOR_FWD_PWM_PIN.freq(PWMFrequency)
+
+LEFT_MOTOR_REV_PWM_PIN = PWM(Pin(2, Pin.OUT))
+LEFT_MOTOR_REV_PWM_PIN.freq(PWMFrequency)
+
+
+RIGHT_MOTOR_FWD_PWM_PIN = PWM(Pin(5, Pin.OUT))
+RIGHT_MOTOR_FWD_PWM_PIN.freq(PWMFrequency)
+RIGHT_MOTOR_REV_PWM_PIN = PWM(Pin(4, Pin.OUT))
+RIGHT_MOTOR_REV_PWM_PIN.freq(PWMFrequency)
+
+#Sensor pins
+SENSOR_FRONT_ACTIVATION_PIN = Pin(21, Pin.OUT) 
+SENSOR_ANGLE_ACTIVATION_PIN = Pin(22, Pin.OUT)
+
+
+SENSOR_LEFT_ADC_PIN = ADC(Pin(28)) 
+SENSOR_RIGHT_ADC_PIN = ADC(Pin(26))
+SENSOR_FRONT_ADC_PIN = ADC(Pin(27))
+
+# Other
+
+BUTTON_FUNCTION_PIN = Pin(15, Pin.IN, Pin.PULL_UP) #TODO rename to be left
+BUTTON_RIGHT_PIN = Pin(14, Pin.IN, Pin.PULL_UP)
+
+BOARD_LED = Pin("LED", Pin.OUT)
+
+
